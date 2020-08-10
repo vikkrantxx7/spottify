@@ -1,3 +1,4 @@
+import './index.scss'
 import { AppContainer } from 'react-hot-loader'
 import App from '../containers/app.js'
 
@@ -16,13 +17,13 @@ const render = (Component) => {
     )
 }
 
+render(App)
 // style-loader handles HMR for styles, for react code react-hot-loader is needed
 if (module.hot) {
     module.hot.accept('../containers/app.js', () => {
+        console.log("Hot Updated ")
         render(App)
     })
-} else {
-    render(App)
 }
 
 console.log(
