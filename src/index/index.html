@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <%= htmlWebpackPlugin.tags.headTags %> <!-- this is replaced by meta tags defined in webpack config -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+        <title><%= htmlWebpackPlugin.options.title %></title>
+        <%= htmlWebpackPlugin.tags.bodyTags %> <!-- this is replaced by script tag (when inject: false)-->
+    </head>
+    <body>
+        <noscript>Either your browser does not support JavaScript or you have turned it off !!</noscript>
+        <div id="app"></div>
+    </body>
+</html>
