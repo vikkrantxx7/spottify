@@ -1,8 +1,11 @@
 import './app.scss'
+import { Player } from '../components/player/player.js'
 import Login from '../components/login/login.js'
+import SpotifyWebApi from 'spotify-web-api-js'
 
 const App = () => {
     const [token, setToken] = React.useState(null)
+    const spotify = new SpotifyWebApi()
 
     const getUrlHashes = () => {
         return window.location.hash
@@ -22,10 +25,13 @@ const App = () => {
 
         if (token2) {
             setToken(token2)
+            spotify.setAcessToken(token2)
         }
     }, [])
 
-    return <div>{token ? 'Logged In' : <Login />}</div>
+    return <div>{token ? <Player /> : <Login />}</div>
 }
+
+App.displayName = 'Spotify'
 
 export default App
