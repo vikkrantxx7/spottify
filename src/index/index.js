@@ -1,6 +1,8 @@
 import './index.scss'
 import { AppContainer } from 'react-hot-loader'
+import { DataLayer } from '../containers/dataLayer/dataLayer.js'
 import App from '../containers/app.js'
+import reducer, { initialState } from '../containers/reducer.js'
 
 const app = document.getElementById('app')
 
@@ -8,10 +10,14 @@ const render = (Component) => {
     ReactDOM.render(
         module.hot ? ( // removes console warning in dev mode without hot disabled
             <AppContainer>
-                <Component />
+                <DataLayer initialState={initialState} reducer={reducer}>
+                    <Component />
+                </DataLayer>
             </AppContainer>
         ) : (
-            <Component />
+            <DataLayer initialState={initialState} reducer={reducer}>
+                <Component />
+            </DataLayer>
         ),
         app,
     )

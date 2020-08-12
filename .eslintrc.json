@@ -63,6 +63,7 @@
     "import/prefer-default-export": "off",
     "import/order": "off",
     "no-param-reassign": "off",
+    "import/no-extraneous-dependencies": "off",
     "react/jsx-boolean-value": ["error", "always"],
     "react/jsx-curly-spacing": ["error", { "when": "never", "attributes": true, "children": false }],
     "react/jsx-equals-spacing": ["error", "never"],

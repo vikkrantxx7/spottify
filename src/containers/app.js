@@ -1,10 +1,11 @@
 import './app.scss'
 import { Player } from '../components/player/player.js'
+import { useDataLayerValue } from './dataLayer/dataLayer.js'
 import Login from '../components/login/login.js'
 import SpotifyWebApi from 'spotify-web-api-js'
 
 const App = () => {
-    const [token, setToken] = React.useState(null)
+    const [{ token }, dispatch] = useDataLayerValue()
     const spotify = new SpotifyWebApi()
 
     const getUrlHashes = () => {
@@ -24,8 +25,11 @@ const App = () => {
         window.location.hash = ''
 
         if (token2) {
-            setToken(token2)
-            spotify.setAcessToken(token2)
+            dispatch({ type: 'SET_TOKEN', token: token2 })
+            spotify.setAccessToken(token2)
+            spotify.getMe().then((user) => {
+                dispatch({ user, type: 'SET_USER' })
+            })
         }
     }, [])
 
