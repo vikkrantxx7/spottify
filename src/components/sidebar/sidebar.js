@@ -1,5 +1,7 @@
+import './sidebar.scss'
+
 export const Sidebar = () => {
-    return <div></div>
+    return <div className="sidebar">Sidebar</div>
 }
 
 Sidebar.displayName = 'Sidebar'

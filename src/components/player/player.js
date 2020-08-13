@@ -1,6 +1,7 @@
 import './player.scss'
-import { Sidebar } from '../sidebar/sidebar.js'
 import { Body } from '../body/body.js'
+import { Footer } from '../footer/footer.js'
+import { Sidebar } from '../sidebar/sidebar.js'
 
 export const Player = ({ spotify }) => {
     return (
@@ -8,6 +9,7 @@ export const Player = ({ spotify }) => {
             <div className="player__body">
                 <Sidebar />
                 <Body />
+                <Footer />
             </div>
         </div>
     )
