@@ -27,7 +27,6 @@ render(App)
 // style-loader handles HMR for styles, for react code react-hot-loader is needed
 if (module.hot) {
     module.hot.accept('../containers/app.js', () => {
-        console.log("Hot Updated ")
         render(App)
     })
 }

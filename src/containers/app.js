@@ -33,7 +33,7 @@ const App = () => {
         }
     }, [])
 
-    return <div>{token ? <Player /> : <Login />}</div>
+    return <div>{token ? <Player spotify={spotify} /> : <Login />}</div>
 }
 
 App.displayName = 'Spotify'
