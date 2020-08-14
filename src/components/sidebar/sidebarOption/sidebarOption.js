@@ -11,7 +11,11 @@ export const SidebarOption = ({ title, Icon }) => {
 
 SidebarOption.propTypes = {
     title: PropTypes.string.isRequired,
-    Icon: PropTypes.object.isRequired,
+    Icon: PropTypes.object,
+}
+
+SidebarOption.defaultProps = {
+    Icon: null,
 }
 
 SidebarOption.displayName = 'SidebarOption'
